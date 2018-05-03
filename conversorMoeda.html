@@ -21,13 +21,6 @@
 					}
 
 
-					function teste(){
-
-						alert("hello world!");
-
-					}
-
-
 					function converMoeda(){
 
 							 moedas = new Array(4);
@@ -79,13 +72,6 @@
 						}		
 					}
 
-					function calImc(){
-						    var altura = document.getElementById('alt').value;
-						    var peso = document.getElementById('peso').value;
-						    var result = peso/altura;
-						   document.getElementById('imc').value = parseFloat(result.toFixed(2));
-					}
-
 
 					  function somenteNumeros(num) {
         					var er = /[^0-9.]/;
@@ -126,7 +112,7 @@
 
     		<div class="form-group">
    				 <label for="resultado"><b>Valor para converter:</b></label>
-   				 <input type="text" class="form-control" id="valor" onkeyup="somenteNumeros(this)"  placeholder="00.00"/>
+   				 <input type="text" class="form-control" id="valor"  onkeypress="somenteNumeros(this)" onkeyup=""  placeholder="00.00"/>
   			</div>
 
 

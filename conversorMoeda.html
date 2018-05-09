@@ -106,6 +106,12 @@
     					}
 
 
+
+							function getMoney( str ){
+        							return parseInt( str.replace(/[\D]+/g,'') );
+							}
+
+
 			</script>
 
 
@@ -134,7 +140,7 @@
 
     		<div class="form-group">
    				 <label for="resultado"><b>Valor para converter:</b></label>
-   				 <input type="text" class="form-control" id="valor" onkeyup="somenteNumeros(this)"  placeholder="00.00"/>
+   				 <input type="text" class="form-control" id="valor" onkeyup="somenteNumeros(this)" placeholder="00.00"/>
   			</div>
 
 

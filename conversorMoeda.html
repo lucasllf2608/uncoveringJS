@@ -40,8 +40,7 @@
 							}else{
 							if(convertFrom == convertTo){
 								alert("Verifique as moedas.");
-								//document.getElementById('convertFrom').focus();
-								//document.getElementById('convertTo').focus();
+								
 							}else{
 
 								switch(convertFrom){
@@ -80,9 +79,11 @@
 
 									
 										break;
-										
 
+											case 2:
 
+												console.log("valor"+convertValor+"de:"+convertFrom+"Para:"+convertTo);
+												break;
 
 									default:
 										alert("Não no momento.");	
@@ -139,11 +140,9 @@
 
     		<div class="form-group">
    				 <label for="resultado"><b>Valor para converter:</b></label>
-<<<<<<< HEAD
-   				 <input type="text" class="form-control" id="valor" onkeyup="somenteNumeros(this)" placeholder="00.00"/>
-=======
+
    				 <input type="text" class="form-control" id="valor"  onkeypress="somenteNumeros(this)" onkeyup=""  placeholder="00.00"/>
->>>>>>> 59ee4413921b0f890ad394a19f717ddb58469790
+
   			</div>
 
 
@@ -179,7 +178,7 @@
   			
 
 		
-
+http://api.promasters.net.br/cotacao/v1/valores
     </div>  
   </body>
 </html>

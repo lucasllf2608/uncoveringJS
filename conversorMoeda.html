@@ -11,6 +11,18 @@
 
 
 	<script language="JavaScript" type="text/javascript">
+			
+			
+			function carregarDados(){
+					fetch('https://economia.awesomeapi.com.br/all').then( function(response){
+					  response.json().then(function(data){
+						console.log(data);
+						
+						//console.log(data['ARS']);
+					  });
+					  //response.text();
+				});
+			}
 
  							
 					function cleanCamps(){
@@ -22,6 +34,8 @@
 
 
 					function converMoeda(){
+
+						carregarDados();
 
 							 moedas = new Array(4);
 					 	    moedas[0] = 1.00;
@@ -178,7 +192,8 @@
   			
 
 		
-http://api.promasters.net.br/cotacao/v1/valores
+<!-- http://api.promasters.net.br/cotacao/v1/valores -->
+
     </div>  
   </body>
 </html>

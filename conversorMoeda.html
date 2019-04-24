@@ -8,10 +8,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="
 	anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 
 	<script language="JavaScript" type="text/javascript">
 			
+
+			$.getJSON('https://economia.awesomeapi.com.br/all', function(data){
+
+				var moedas = data;
+				console.log(moedas);
+
+					var text = `${data.USD.bid}`
+				$(".mymoney").html(text);
+				} );
+
+
+				var getJson = function(url, callback){
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', url, true);
+xhr.responseType = 'json';
+
+xhr.onload = function(){
+		var status = xhr.status;
+}
+
+}
 			
 			function carregarDados(){
 					fetch('https://economia.awesomeapi.com.br/all').then( function(response){
@@ -189,30 +212,20 @@
    				 <label for="resultado"><b>Resultado:</b></label>
    				 <input type="text" class="form-control" id="result" readonly="true">
   			</div>
-  			
+			
+				
+				<div class="mymoney"></div>
 
-		<script>
+		
 
-			var getJson = function(url, callback){
 
-				var xhr = new XMLHttpRequest();
-				xhr.open('GET', url, true);
-				xhr.responseType = 'json';
 
-				xhr.onload = function(){
-						var status = xhr.status;
-				}
-
-			}
 
 
 			
 		
-			document.write("i");
-			
-		</script>
 <!-- http://api.promasters.net.br/cotacao/v1/valores -->
 
-    </div>  
+    
   </body>
 </html>

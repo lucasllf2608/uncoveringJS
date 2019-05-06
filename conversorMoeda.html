@@ -27,23 +27,15 @@ $( document ).ready(function() {
 				var moedasLodash = _.keysIn(data);
 
 				moedasLodash.map(function(key){
-<<<<<<< HEAD
-					console.log(data[key].name);
+
+					//console.log(data[key]);
+
+					
+				    $('#convertFrom').append('<option value="'+data[key].high+'">'+data[key].name+'</option>');
+					$('#convertTo').append('<option value="'+data[key].high+'">'+data[key].name+'</option>');
+					
 					
 
-=======
-					//idMoeda = data[key].code;
-					nameMoeda = data[key].name;
-					//valueMoeda = data[key].high;
-			    //console.log(valueMoeda);
-				//	console.log(data[key].name);
-					//console.log(data[key]);
-					console.log(nameMoeda);
-				  $('#convertFrom').append('<option value="foo" selected="selected">teste</option>');
-					$('#convertTo').append('<option value="foo" selected="selected">teste</option>');
-					
-					
->>>>>>> 245b2cee478359f42325a8c1bc98c01067463e53
 				});
 				//var text = `${data.USD.bid}`
 				//$(".mymoney").html(text);
@@ -89,6 +81,10 @@ $( document ).ready(function() {
 
 						carregarDados();
 
+						valorMoedaFrom = Number(document.getElementById("convertFrom").value);
+						valorMoedaTo = Number(document.getElementById("convertTo").value);
+						console.log(valorMoeda01);
+						
 							 moedas = new Array(4);
 					 	    moedas[0] = 1.00;
 						    moedas[1] = 3.55;

@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,59 +12,66 @@
 
 
 	<script language="JavaScript" type="text/javascript">
+
+$( document ).ready(function() {
+        console.log( "document loaded" );
+				carregarDados();
+			//	$('#convertFrom').append('<option value="foo" selected="selected">teste</option>');
+
+
+
+    });
 			
-
-			$.getJSON('https://economia.awesomeapi.com.br/all', function(data){
-
-				
+		$.getJSON('https://economia.awesomeapi.com.br/all', function(data){
 				var moedas = Object.keys(data);
-//						console.log(data);
-
 				var moedasLodash = _.keysIn(data);
 
-
-
 				moedasLodash.map(function(key){
+<<<<<<< HEAD
 					console.log(data[key].name);
 					
 
+=======
+					//idMoeda = data[key].code;
+					nameMoeda = data[key].name;
+					//valueMoeda = data[key].high;
+			    //console.log(valueMoeda);
+				//	console.log(data[key].name);
+					//console.log(data[key]);
+					console.log(nameMoeda);
+				  $('#convertFrom').append('<option value="foo" selected="selected">teste</option>');
+					$('#convertTo').append('<option value="foo" selected="selected">teste</option>');
+					
+					
+>>>>>>> 245b2cee478359f42325a8c1bc98c01067463e53
 				});
-
-						
-				/*
-						moedas.map(function(key){
-								console.log(moedas[key]);
-						});
-
-*/
-
-						
-
-
-					var text = `${data.USD.bid}`
-				$(".mymoney").html(text);
+				//var text = `${data.USD.bid}`
+				//$(".mymoney").html(text);
 				} );
+
+
+
+		
 
 
 				var getJson = function(url, callback){
 
-var xhr = new XMLHttpRequest();
-xhr.open('GET', url, true);
-xhr.responseType = 'json';
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', url, true);
+				xhr.responseType = 'json';
 
-xhr.onload = function(){
-		var status = xhr.status;
-}
+				xhr.onload = function(){
+						var status = xhr.status;
+				}
 
-}
+			}
 			
 			function carregarDados(){
 					fetch('https://economia.awesomeapi.com.br/all').then( function(response){
 					  response.json().then(function(data){
 						console.log(data);
-
-						
 					  });
+
 					  //response.text();
 				});
 			}
@@ -207,12 +213,12 @@ xhr.onload = function(){
 
 
 			<label><b>Converter de:</b></label>
-				<select  class="custom-select" id="convertFrom">
+				<select  class="custom-select" id="convertFrom" name="convertFrom">
 					<option>Selecione</option>
 				</select>	
 
 		 	<label><b>Para:</b></label>
-				<select  class="custom-select" id="convertTo" required= true>
+				<select  class="custom-select" id="convertTo" name ="convertTo" required= true>
 					<option>Selecione</option>
 			</select>	
 			</br>

@@ -29,13 +29,9 @@ $( document ).ready(function() {
 				moedasLodash.map(function(key){
 
 					//console.log(data[key]);
-
-					
 				    $('#convertFrom').append('<option value="'+data[key].high+'">'+data[key].name+'</option>');
 					$('#convertTo').append('<option value="'+data[key].high+'">'+data[key].name+'</option>');
 					
-					
-
 				});
 				//var text = `${data.USD.bid}`
 				//$(".mymoney").html(text);
@@ -81,9 +77,15 @@ $( document ).ready(function() {
 
 						carregarDados();
 
-						valorMoedaFrom = Number(document.getElementById("convertFrom").value);
-						valorMoedaTo = Number(document.getElementById("convertTo").value);
-						console.log(valorMoeda01);
+						valorMoedaFrom = document.getElementById("convertFrom").value;
+						valorMoedaTo = document.getElementById("convertTo").value;
+
+						valorMoedaFrom = Number(valorMoedaFrom.replace(/,/gi, "."));
+						
+
+						console.log(valorMoedaFrom);
+
+						return;
 						
 							 moedas = new Array(4);
 					 	    moedas[0] = 1.00;

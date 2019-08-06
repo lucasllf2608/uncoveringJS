@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Learning js</title>
+    </head>
+    <body>
+
+        <input type="text" id="inputValue" placeholder="Nome">
+        <input type="text" id="idade" placeholder="Idade">
+        
+        <button onclick="addItemInTable()">Add</button>
+
+        <table id="myTableData">
+            
+            <tr>
+                <th>Nome</th>                
+                <th>Idade</th>                
+                <th>Situação</th>                
+              </tr>
+              <tr>
+                <td></td>                
+                <td></td>    
+                <td></td>    
+              </tr>
+
+        </table>
+
+        <script>
+
+
+
+                function addItemInTable(){
+                    var parameter = document.getElementById("inputValue").value;
+                    var parameterIdade = document.getElementById("idade").value;
+                   
+                    var table = document.getElementById("myTableData");
+                    var row = table.insertRow(1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+
+                    cell1.innerHTML = parameter;
+                    cell2.innerHTML = parameterIdade;
+
+                    if(parameterIdade >=18 ){
+                        cell3.innerHTML = "Maior de idade";
+                        
+                    }else{
+                        cell3.innerHTML = "<b style='color:red'> Menor de idade</b>";
+                    }
+
+                    
+          
+                }
+
+        </script>
+
+    </body>
+</html>

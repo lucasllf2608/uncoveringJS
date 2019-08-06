@@ -27,8 +27,9 @@ $( document ).ready(function() {
 				var moedasLodash = _.keysIn(data);
 
 				moedasLodash.map(function(key){
-
-					//console.log(data[key]);
+					data[key].high
+					console.log(data[key]);
+					console.log(data[key].high);
 				    $('#convertFrom').append('<option value="'+data[key].high+'">'+data[key].name+'</option>');
 					$('#convertTo').append('<option value="'+data[key].high+'">'+data[key].name+'</option>');
 					

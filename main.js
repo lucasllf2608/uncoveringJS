@@ -1,5 +1,8 @@
-/* 
-estudando com rocketseat
+
+var listElement = document.querySelector('#app ul');
+var  listUsers;
+
+/*  estudando com rocketseat
 
 var xhr = new XMLHttpRequest();
 
@@ -12,7 +15,7 @@ xhr.onreadystatechange = function (){
     }
 }
 
-//     https://api.github.com/users/diego3g
+
 
 */
 /*
@@ -36,16 +39,30 @@ return new Promise(function(resolve, reject){
 
 }
 */
-
 axios.get('https://jsonplaceholder.typicode.com/users')
    .then(function(response){
-      // console.log(response);
-       //console.log(response.data);
+     console.log(response.data);
 
-       for(dt of response.data){
-            console.log(dt.name);
-       }
+     var tam = response.data.length;
+
+        for(var i = 0; i < tam; i++){
+            var todoElement = document.createElement('li');
+            var todoText = document.createTextNode(response.data[i].name);
+    
+            todoElement.appendChild(todoText);
+            listElement.appendChild(todoElement);
+        }
+
+   
    })
    .catch(function(error){
        console.warn(error);
    });
+
+
+   
+
+
+   function saveToStorage(lista){
+        localStorage.setItem('lista', lista);
+   }
